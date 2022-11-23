@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - changeSet:
+      id: user-id-sequence
+      author: ecyas
+      changes:
+        - createSequence:
+            schemaName: user_schema
+            sequenceName: user_id_sequence
+            cacheSize: 1
+            cycle: false
+            dataType: BIGINT
+            incrementBy: 1
+            minValue: 1
+            maxValue: 9223372036854775807
+            startValue: 1

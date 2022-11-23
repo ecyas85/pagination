@@ -1,0 +1,51 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-user-table
+      author: ecyas
+      changes:
+        - createTable:
+            schemaName: user_schema
+            tableName: user
+            columns:
+              - column:
+                  name: id
+                  defaultValueComputed: nextval('user_id_sequence')
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: user_pk
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: status
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: address
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: phone
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: image_url
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: gender
+                  type: VARCHAR(255)

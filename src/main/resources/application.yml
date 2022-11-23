@@ -1,0 +1,35 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: pagination
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pagination?currentSchema=user_schema
+    username: ecyas
+    password: letmein
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        default_schema: user_schema
+  liquibase:
+    default-schema: user_schema
+    liquibase-schema: user_schema
+  jackson:
+    default-property-inclusion: non_null
+  sql:
+    init:
+      mode: always
+
+#debug: true
+#logging:
+#  level:
+#    "org.springframework.jdbc.datasource.init": DEBUG
+#    "org.springframework.boot.autoconfigure": DEBUG
+#    "net.lbruun.springboot.preliquibase": TRACE
+#    " liquibase": TRACE
